@@ -1,0 +1,122 @@
+"use client"
+
+import { Button } from "@/components/ui/button"
+import { ArrowUpRight, Sparkles } from "lucide-react"
+
+const stats = [
+  { value: "10k+", label: "Active Users" },
+  { value: "50M+", label: "Messages Sent" },
+  { value: "99.9%", label: "Uptime" },
+  { value: "Zero", label: "Data Breaches" },
+]
+
+export function CTA() {
+  return (
+    <section className="relative py-32 md:py-40 overflow-hidden">
+      {/* Animated background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/30 to-background" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[150px] animate-pulse" style={{ animationDuration: '4s' }} />
+
+      <div className="container mx-auto px-6 relative z-10">
+        {/* Stats */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-24">
+          {stats.map((stat, index) => (
+            <div
+              key={stat.label}
+              className="group relative p-8 md:p-10 rounded-3xl border border-border/50 bg-card/50 backdrop-blur-sm text-center shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+            >
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/0 to-primary/0 group-hover:from-primary/5 group-hover:to-primary/10 transition-all duration-500 pointer-events-none" />
+              <div className="relative">
+                <div className="font-serif text-4xl md:text-5xl font-bold text-primary mb-3 group-hover:scale-110 transition-transform">
+                  {stat.value}
+                </div>
+                <div className="text-sm text-muted-foreground font-medium">
+                  {stat.label}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Main CTA Card */}
+        <div className="relative max-w-5xl mx-auto">
+          {/* Glow effect */}
+          <div className="absolute -inset-8 bg-gradient-to-r from-primary/30 via-primary/20 to-primary/30 rounded-[3rem] blur-3xl opacity-40" />
+          
+          <div className="relative rounded-[2.5rem] bg-gradient-to-br from-primary/10 via-primary/5 to-transparent border border-primary/30 p-12 md:p-20 text-center overflow-hidden shadow-2xl">
+            {/* Animated particles */}
+            <div className="absolute inset-0 overflow-hidden">
+              {[...Array(8)].map((_, i) => (
+                <div
+                  key={i}
+                  className="absolute w-1 h-1 rounded-full bg-primary/40 animate-float"
+                  style={{
+                    top: `${20 + i * 10}%`,
+                    left: `${10 + i * 10}%`,
+                    animationDelay: `${i * 0.5}s`,
+                    animationDuration: `${5 + i}s`
+                  }}
+                />
+              ))}
+            </div>
+
+            <div className="relative">
+              {/* Badge */}
+              <div className="flex justify-center mb-8">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/40 bg-primary/10 backdrop-blur-sm">
+                  <Sparkles className="w-4 h-4 text-primary" />
+                  <span className="text-sm text-foreground font-medium">
+                    Join the revolution
+                  </span>
+                </div>
+              </div>
+
+              <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8 leading-[1.1]">
+                Ready to own your workspace?
+              </h2>
+
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed">
+                Join thousands who have reclaimed their digital sovereignty. 
+                Your keys, your data, your rules.
+              </p>
+
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+                <Button 
+                  size="lg" 
+                  className="relative group bg-primary text-primary-foreground hover:bg-primary/90 rounded-2xl px-10 h-16 text-lg font-medium gap-2 shadow-2xl shadow-primary/30 overflow-hidden"
+                >
+                  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000" />
+                  <span className="relative">Get started free</span>
+                  <ArrowUpRight className="w-5 h-5 relative group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </Button>
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="rounded-2xl px-10 h-16 text-lg font-medium border-border/50 bg-card/50 backdrop-blur-xl hover:bg-card hover:border-primary/30 transition-all"
+                >
+                  Talk to sales
+                </Button>
+              </div>
+
+              {/* Trust points */}
+              <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-muted-foreground">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-green-500 shadow-sm shadow-green-500/50" />
+                  <span>No credit card required</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-green-500 shadow-sm shadow-green-500/50" />
+                  <span>14-day free trial</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-green-500 shadow-sm shadow-green-500/50" />
+                  <span>Cancel anytime</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
