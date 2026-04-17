@@ -1,41 +1,47 @@
 "use client"
 
-import { Mail, MessageSquare, Users, Calendar, BookOpen, KeyRound } from "lucide-react"
+import { Mail, MessageSquare, Users, Calendar, BookOpen } from "lucide-react"
 import { useEffect, useRef } from "react"
 
 const features = [
   {
     icon: Mail,
+    iconSrc: null,
     title: "Encrypted Email",
     description: "NIP-05 verified addresses. Your inbox, truly private. No scanning, no ads, no surveillance.",
     highlight: true,
   },
   {
     icon: MessageSquare,
+    iconSrc: null,
     title: "Real-time Chat",
     description: "Marmot Protocol for E2EE messaging. Slack-like channels without the corporate backdoors.",
     highlight: false,
   },
   {
     icon: Users,
+    iconSrc: null,
     title: "Team Management",
     description: "Onboard teammates with Nostr identities. Granular permissions without compromising privacy.",
     highlight: false,
   },
   {
     icon: Calendar,
+    iconSrc: null,
     title: "Calendars",
     description: "NIP-52 powered scheduling. Your meetings, your data. Coming soon: NIP-5A for public calendar pages.",
     highlight: false,
   },
   {
     icon: BookOpen,
+    iconSrc: null,
     title: "Wiki",
     description: "Collaborative docs that stay between you and your team. Knowledge bases without the knowledge harvesting.",
     highlight: false,
   },
   {
-    icon: KeyRound,
+    icon: null,
+    iconSrc: "https://raw.githubusercontent.com/openbao/artwork/refs/heads/main/color/openbao-single-color-square.svg",
     title: "OpenBao Vault",
     description: "Managed secret storage for your nsec keys. Enterprise-grade security for your cryptographic identity.",
     highlight: true,
@@ -82,13 +88,12 @@ export function Features() {
             </span>
           </div>
           <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8 leading-[1.1]">
-            Everything you need.
+            Cryptographically-secure
             <br />
-            <span className="text-muted-foreground">Nothing they can spy on.</span>
+            <span className="text-muted-foreground">Workplace suite</span>
           </h2>
           <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl">
-            A complete workspace suite rebuilt from the ground up with privacy as the foundation, 
-            not an afterthought.
+            A complete set of tools for secure team collaboration, built on the Nostr protocol. No data harvesting, no corporate surveillance. Just you and your team, working together with confidence.
           </p>
         </div>
 
@@ -124,7 +129,12 @@ export function Features() {
                   relative inline-flex items-center justify-center w-14 h-14 rounded-2xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-3
                   ${feature.highlight ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/30' : 'bg-muted text-foreground'}
                 `}>
-                  <feature.icon className="w-6 h-6" />
+                  {feature.iconSrc ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img src={feature.iconSrc} alt={feature.title} className="w-8 h-8 object-contain" />
+                  ) : feature.icon ? (
+                    <feature.icon className="w-6 h-6" />
+                  ) : null}
                 </div>
               </div>
 

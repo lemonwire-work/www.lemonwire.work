@@ -1,13 +1,13 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ArrowUpRight, Sparkles } from "lucide-react"
+import { Sparkles } from "lucide-react"
 
-const stats = [
-  { value: "10k+", label: "Active Users" },
-  { value: "50M+", label: "Messages Sent" },
-  { value: "99.9%", label: "Uptime" },
-  { value: "Zero", label: "Data Breaches" },
+const principles = [
+  { value: "Open Protocol", label: "No vendor lock-in. Built on Nostr." },
+  { value: "Your Keys", label: "We never hold your cryptographic identity." },
+  { value: "E2EE by Default", label: "Encryption isn't a feature. It's the foundation." },
+  { value: "Zero Trust", label: "Designed so even we can't read your data." },
 ]
 
 export function CTA() {
@@ -18,20 +18,20 @@ export function CTA() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[150px] animate-pulse" style={{ animationDuration: '4s' }} />
 
       <div className="container mx-auto px-6 relative z-10">
-        {/* Stats */}
+        {/* Principles */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-24">
-          {stats.map((stat, index) => (
+          {principles.map((item) => (
             <div
-              key={stat.label}
+              key={item.value}
               className="group relative p-8 md:p-10 rounded-3xl border border-border/50 bg-card/50 backdrop-blur-sm text-center shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/0 to-primary/0 group-hover:from-primary/5 group-hover:to-primary/10 transition-all duration-500 pointer-events-none" />
               <div className="relative">
-                <div className="font-serif text-4xl md:text-5xl font-bold text-primary mb-3 group-hover:scale-110 transition-transform">
-                  {stat.value}
+                <div className="font-serif text-lg md:text-xl font-bold text-foreground mb-3">
+                  {item.value}
                 </div>
-                <div className="text-sm text-muted-foreground font-medium">
-                  {stat.label}
+                <div className="text-sm text-muted-foreground leading-relaxed">
+                  {item.label}
                 </div>
               </div>
             </div>
@@ -81,21 +81,24 @@ export function CTA() {
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-                <Button 
-                  size="lg" 
+                <Button
+                  size="lg"
                   className="relative group bg-primary text-primary-foreground hover:bg-primary/90 rounded-2xl px-10 h-16 text-lg font-medium gap-2 shadow-2xl shadow-primary/30 overflow-hidden"
                 >
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000" />
-                  <span className="relative">Get started free</span>
-                  <ArrowUpRight className="w-5 h-5 relative group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Google_Chrome_icon_%28February_2022%29.svg/3840px-Google_Chrome_icon_%28February_2022%29.svg.png" alt="" className="w-5 h-5 relative" />
+                  <span className="relative">Get Extension</span>
                 </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="rounded-2xl px-10 h-16 text-lg font-medium border-border/50 bg-card/50 backdrop-blur-xl hover:bg-card hover:border-primary/30 transition-all"
-                >
-                  Talk to sales
-                </Button>
+                <a href="mailto:admin@lemonwire.work">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="rounded-2xl px-10 h-16 text-lg font-medium border-border/50 bg-card/50 backdrop-blur-xl hover:bg-card hover:border-primary/30 transition-all"
+                  >
+                    Email Us
+                  </Button>
+                </a>
               </div>
 
               {/* Trust points */}

@@ -3,34 +3,41 @@
 import { useState } from "react"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
-import { Mail, AtSign, Calendar } from "lucide-react"
+import { LayoutDashboard, AtSign, Calendar, Shield } from "lucide-react"
 
 const tabs = [
   {
-    id: "mail",
-    label: "Mail",
-    icon: Mail,
-    image: "/images/screenshot-mail.png",
-    description: "Full-featured email with NIP-05 verified addresses and legacy SMTP bridge.",
+    id: "overview",
+    label: "Overview",
+    icon: LayoutDashboard,
+    image: "/images/screenshot-app-1.png",
+    description: "Workspace dashboard — members, channels, signing activity, and OpenBao vault status at a glance.",
   },
   {
     id: "identity",
     label: "Identity",
     icon: AtSign,
-    image: "/images/screenshot-nip05.png",
+    image: "/images/screenshot-app-2.png",
     description: "Manage your NIP-05 handle with domain verification and instant propagation.",
   },
   {
     id: "calendar",
     label: "Calendar",
     icon: Calendar,
-    image: "/images/screenshot-calendar.png",
+    image: "/images/screenshot-app-3.png",
     description: "NIP-52 calendars with team scheduling, RSVPs, and Nostr event signing.",
+  },
+  {
+    id: "vault",
+    label: "Vault",
+    icon: Shield,
+    image: "/images/screenshot-app-4.png",
+    description: "OpenBao-backed key vault for managing nsec keys and signing sessions with enterprise-grade security.",
   },
 ]
 
 export function Screenshots() {
-  const [activeTab, setActiveTab] = useState("mail")
+  const [activeTab, setActiveTab] = useState("overview")
   const activeItem = tabs.find((tab) => tab.id === activeTab) || tabs[0]
 
   return (
@@ -93,7 +100,7 @@ export function Screenshots() {
               </div>
               <div className="flex-1 flex justify-center">
                 <div className="px-6 py-2 rounded-xl bg-background/80 backdrop-blur-sm text-sm text-muted-foreground font-mono border border-border/30">
-                  app.lemonwire.io
+                  app.lemonwire.work
                 </div>
               </div>
               <div className="w-20" />

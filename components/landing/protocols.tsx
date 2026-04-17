@@ -10,13 +10,15 @@ const protocols = [
     tagline: "Identity Verification",
     description: "Human-readable Nostr addresses. your-name@yourcompany.com becomes a verified cryptographic identity.",
     status: "stable",
+    logoSrc: null,
   },
   {
     id: "NIP-52",
-    name: "NIP-52", 
+    name: "NIP-52",
     tagline: "Calendar Events",
     description: "Decentralized calendar protocol. Schedule meetings and events that sync across any Nostr client.",
     status: "stable",
+    logoSrc: null,
   },
   {
     id: "MARMOT",
@@ -24,6 +26,7 @@ const protocols = [
     tagline: "E2EE Real-time Chat",
     description: "Double Ratchet encryption for Nostr. Perfect forward secrecy for every message, every channel.",
     status: "stable",
+    logoSrc: "https://avatars.githubusercontent.com/u/200956832?s=200&v=4",
   },
   {
     id: "NIP-5A",
@@ -31,6 +34,7 @@ const protocols = [
     tagline: "Hosted Calendar Pages",
     description: "Public scheduling pages powered by Nostr. Let others book time with you, on your terms.",
     status: "coming soon",
+    logoSrc: null,
   },
 ]
 
@@ -66,16 +70,20 @@ export function Protocols() {
           {protocols.map((protocol, index) => (
             <div
               key={protocol.id}
-              className="group relative p-8 md:p-10 rounded-3xl border border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/30 transition-all duration-500 shadow-lg hover:shadow-xl hover:-translate-y-1"
+              className="group relative p-8 md:p-10 rounded-3xl border border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/40 hover:bg-primary/10 transition-all duration-500 shadow-lg hover:shadow-xl hover:-translate-y-1"
             >
               {/* Glow effect */}
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/0 to-primary/0 group-hover:from-primary/5 group-hover:to-primary/10 transition-all duration-500 pointer-events-none" />
-              
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/0 to-primary/0 group-hover:from-primary/10 group-hover:to-primary/20 transition-all duration-500 pointer-events-none" />
+
               <div className="relative">
                 <div className="flex items-start justify-between mb-5">
                   <div>
                     <div className="flex items-center gap-3 mb-2">
-                      <h3 className="font-mono text-2xl font-bold text-foreground group-hover:text-primary group-hover:scale-105 transition-all inline-block">
+                      {protocol.logoSrc && (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img src={protocol.logoSrc} alt={protocol.name} className="w-8 h-8 rounded-full object-cover" />
+                      )}
+                      <h3 className="font-mono text-2xl font-bold text-foreground group-hover:scale-105 transition-all inline-block">
                         {protocol.name}
                       </h3>
                       <Badge 
@@ -92,7 +100,7 @@ export function Protocols() {
                       {protocol.tagline}
                     </p>
                   </div>
-                  <ExternalLink className="w-5 h-5 text-muted-foreground/50 group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                  <ExternalLink className="w-5 h-5 text-muted-foreground/50 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                 </div>
                 <p className="text-muted-foreground leading-relaxed">
                   {protocol.description}

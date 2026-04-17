@@ -1,61 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Check, ArrowUpRight, Star } from "lucide-react"
-import { cn } from "@/lib/utils"
-
-const plans = [
-  {
-    name: "Starter",
-    price: "Free",
-    period: "",
-    description: "For individuals exploring the decentralized future.",
-    features: [
-      "Up to 5 team members",
-      "1 NIP-05 domain",
-      "100MB encrypted email",
-      "Basic calendar",
-      "Community Discord",
-    ],
-    cta: "Start Free",
-    popular: false,
-  },
-  {
-    name: "Team",
-    price: "$12",
-    period: "/user/mo",
-    description: "For teams serious about privacy and sovereignty.",
-    features: [
-      "Unlimited members",
-      "5 NIP-05 domains",
-      "10GB encrypted email",
-      "Marmot E2EE chat",
-      "Wiki & docs",
-      "OpenBao key vault",
-      "Priority support",
-    ],
-    cta: "Start Trial",
-    popular: true,
-  },
-  {
-    name: "Enterprise",
-    price: "Custom",
-    period: "",
-    description: "For organizations with compliance and scale needs.",
-    features: [
-      "Everything in Team",
-      "Unlimited domains",
-      "Unlimited storage",
-      "Self-hosted option",
-      "Custom relay deployment",
-      "SSO / SCIM",
-      "Dedicated support",
-      "SLA guarantee",
-    ],
-    cta: "Contact Sales",
-    popular: false,
-  },
-]
+import { ArrowUpRight } from "lucide-react"
 
 export function Pricing() {
   return (
@@ -70,106 +16,85 @@ export function Pricing() {
           <div className="inline-flex items-center gap-3 mb-6">
             <div className="h-px w-12 bg-gradient-to-r from-transparent to-primary" />
             <span className="text-xs font-mono uppercase tracking-[0.2em] text-primary">
-              Pricing
+              Design Partner Program
             </span>
             <div className="h-px w-12 bg-gradient-to-l from-transparent to-primary" />
           </div>
           <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8 leading-[1.1]">
-            Simple pricing.
+            Build with us.
             <br />
-            <span className="text-muted-foreground">No surveillance tax.</span>
+            <span className="text-muted-foreground">From the ground up.</span>
           </h2>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            Start free, scale when ready. You pay for features, not for us to mine your data.
+            We are accepting <strong className="text-foreground">6 design partners</strong> over the Spring of 2026 — organizations with a genuine need for zero-knowledge collaboration environments.
           </p>
         </div>
 
-        {/* Pricing cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {plans.map((plan) => (
-            <div
-              key={plan.name}
-              className={cn(
-                "relative group rounded-3xl border transition-all duration-500",
-                plan.popular
-                  ? "border-primary/40 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent md:scale-105 shadow-2xl shadow-primary/20"
-                  : "border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/30 shadow-lg hover:shadow-xl hover:-translate-y-1"
-              )}
-            >
-              {/* Glow effect for popular plan */}
-              {plan.popular && (
-                <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 rounded-[2rem] blur-2xl opacity-50" />
-              )}
+        {/* Partner card */}
+        <div className="max-w-2xl mx-auto">
+          <div className="relative group rounded-3xl border border-border/50 bg-card/50 backdrop-blur-sm shadow-2xl overflow-hidden">
+            {/* Glow */}
+            <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 rounded-[2rem] blur-2xl opacity-30 group-hover:opacity-50 transition-opacity" />
 
-              <div className="relative p-8 md:p-10">
-                {/* Popular badge */}
-                {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <div className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-primary text-primary-foreground text-xs font-semibold shadow-lg shadow-primary/30">
-                      <Star className="w-3.5 h-3.5 fill-current" />
-                      Most Popular
-                    </div>
-                  </div>
-                )}
+            <div className="relative p-10 md:p-14">
+              {/* Lemon icon */}
+              <div className="text-4xl mb-8">🍋</div>
 
-                {/* Header */}
-                <div className="mb-8 pt-2">
-                  <h3 className="font-serif text-2xl font-bold mb-4">
-                    {plan.name}
-                  </h3>
-                  <div className="flex items-baseline gap-1 mb-3">
-                    <span className="font-serif text-5xl font-bold">
-                      {plan.price}
-                    </span>
-                    {plan.period && (
-                      <span className="text-sm text-muted-foreground font-medium">{plan.period}</span>
-                    )}
-                  </div>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {plan.description}
+              <h3 className="font-serif text-2xl font-bold mb-4">
+                Design Partner Program
+              </h3>
+
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                We are accepting <strong className="text-foreground">6 design partners</strong> over the Spring of 2026 — organizations with a genuine need for zero-knowledge collaboration environments.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-10">
+                To apply, reach out directly. We&apos;ll review your use case and, if it&apos;s a fit, send you an onboarding link.
+              </p>
+
+              {/* Profile card */}
+              <div className="flex items-center gap-4 p-4 rounded-2xl border border-border/50 bg-background/60 mb-6">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/avatar.jpg"
+                  alt="Comrade ChaCha20-Poly1305"
+                  className="w-12 h-12 rounded-full object-cover shrink-0"
+                />
+                <div className="min-w-0">
+                  <p className="font-semibold text-sm text-foreground">Comrade ChaCha20-Poly1305</p>
+                  <p className="text-xs text-muted-foreground font-mono break-all">
+                    npub1l70twzdewgu852fgvkplyhp068w259zqw724vtr6c4hqmzwc23gqkjmfx7
                   </p>
                 </div>
+              </div>
 
-                {/* Features */}
-                <ul className="space-y-4 mb-10">
-                  {plan.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-3">
-                      <div className={cn(
-                        "w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5 transition-transform group-hover:scale-110",
-                        plan.popular ? "bg-primary/20" : "bg-muted"
-                      )}>
-                        <Check className={cn(
-                          "w-3.5 h-3.5",
-                          plan.popular ? "text-primary" : "text-foreground/70"
-                        )} />
-                      </div>
-                      <span className="text-sm text-muted-foreground leading-relaxed">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                {/* CTA */}
-                <Button
-                  className={cn(
-                    "w-full rounded-2xl h-12 gap-2 font-medium transition-all",
-                    plan.popular
-                      ? "bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30"
-                      : "bg-muted text-foreground hover:bg-muted/80"
-                  )}
-                >
-                  {plan.cta}
+              {/* CTAs */}
+              <a
+                href="https://vectorapp.io/profile/npub1l70twzdewgu852fgvkplyhp068w259zqw724vtr6c4hqmzwc23gqkjmfx7"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block mb-3"
+              >
+                <Button className="w-full rounded-2xl h-13 text-base font-semibold bg-foreground text-background hover:bg-foreground/90 shadow-lg gap-2">
+                  Message on Vector
                   <ArrowUpRight className="w-4 h-4" />
                 </Button>
-              </div>
-            </div>
-          ))}
-        </div>
+              </a>
 
-        {/* Trust line */}
-        <div className="text-center mt-16">
-          <p className="text-muted-foreground">
-            All plans include end-to-end encryption and Nostr protocol support.
-          </p>
+              <a
+                href="mailto:admin@lemonwire.work"
+                className="block mb-6"
+              >
+                <Button variant="outline" className="w-full rounded-2xl h-13 text-base font-semibold gap-2">
+                  admin@lemonwire.work
+                  <ArrowUpRight className="w-4 h-4" />
+                </Button>
+              </a>
+
+              <p className="text-center text-xs text-muted-foreground">
+                Only 6 slots available · $35,000 one-time onboarding
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

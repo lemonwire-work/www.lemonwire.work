@@ -4,7 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { Menu, X, ArrowUpRight } from "lucide-react"
+import { Menu, X } from "lucide-react"
 
 const navItems = [
   { label: "Features", href: "#features" },
@@ -26,12 +26,12 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
-      <div className="mx-4 md:mx-6 mt-4">
+      <div>
         <nav className={`
-          flex items-center justify-between px-6 py-4 rounded-2xl transition-all duration-300
-          ${scrolled 
-            ? 'border border-border/50 bg-card/80 backdrop-blur-2xl shadow-xl shadow-foreground/5' 
-            : 'border border-border/30 bg-card/60 backdrop-blur-xl shadow-lg shadow-foreground/3'
+          flex items-center justify-between px-6 py-4 transition-all duration-300
+          ${scrolled
+            ? 'bg-card/80 backdrop-blur-2xl shadow-xl shadow-foreground/5 border-b border-border/50'
+            : 'bg-card/60 backdrop-blur-xl'
           }
         `}>
           <Link href="/" className="flex items-center gap-3 group">
@@ -62,20 +62,14 @@ export function Header() {
           </div>
 
           <div className="hidden md:flex items-center gap-3">
-            <Button 
-              variant="ghost" 
+            <Button
               size="sm"
-              className="text-muted-foreground hover:text-foreground rounded-xl font-medium"
-            >
-              Sign In
-            </Button>
-            <Button 
-              size="sm"
-              className="relative group bg-primary text-primary-foreground hover:bg-primary/90 rounded-xl px-5 gap-2 shadow-lg shadow-primary/25 overflow-hidden"
+              className="relative group bg-primary text-primary-foreground hover:bg-primary/90 rounded-xl px-5 h-9 gap-2.5 shadow-lg shadow-primary/25 font-semibold text-sm overflow-hidden border border-primary/20 hover:shadow-primary/40 transition-all duration-200"
             >
               <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
-              <span className="relative">Get Started</span>
-              <ArrowUpRight className="w-4 h-4 relative group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Google_Chrome_icon_%28February_2022%29.svg/3840px-Google_Chrome_icon_%28February_2022%29.svg.png" alt="" className="w-4 h-4 relative shrink-0" />
+              <span className="relative tracking-wide">Get Extension</span>
             </Button>
           </div>
 
@@ -90,8 +84,8 @@ export function Header() {
       </div>
 
       {isOpen && (
-        <div className="md:hidden mx-4 mt-2 animate-fade-in">
-          <div className="flex flex-col gap-1 p-4 border border-border/50 bg-card/95 backdrop-blur-2xl rounded-2xl shadow-xl">
+        <div className="md:hidden animate-fade-in border-b border-border/50">
+          <div className="flex flex-col gap-1 p-4 bg-card/95 backdrop-blur-2xl shadow-xl">
             {navItems.map((item) => (
               <Link
                 key={item.label}
@@ -103,15 +97,10 @@ export function Header() {
               </Link>
             ))}
             <div className="border-t border-border/50 my-2" />
-            <Button 
-              variant="ghost" 
-              className="justify-start text-muted-foreground rounded-xl font-medium"
-            >
-              Sign In
-            </Button>
             <Button className="bg-primary text-primary-foreground rounded-xl gap-2 shadow-lg shadow-primary/25">
-              Get Started
-              <ArrowUpRight className="w-4 h-4" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Google_Chrome_icon_%28February_2022%29.svg/3840px-Google_Chrome_icon_%28February_2022%29.svg.png" alt="" className="w-4 h-4" />
+              Get Extension
             </Button>
           </div>
         </div>

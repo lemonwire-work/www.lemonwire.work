@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { ArrowUpRight, Lock, Zap, Shield, Sparkles } from "lucide-react"
+import { ArrowUpRight, Sparkles } from "lucide-react"
 import { useEffect, useRef, useState } from "react"
 
 export function Hero() {
@@ -74,24 +74,21 @@ export function Hero() {
             {/* Headline */}
             <h1 className="mb-6">
               <span className="block font-serif text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] mb-1">
-                Your data.
+                Nostr-powered
               </span>
               <span className="block font-serif text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] mb-1">
-                <span className="relative inline-block">
-                  <span className="gradient-text">Your keys.</span>
-                  <span className="absolute -inset-2 bg-primary/10 blur-xl -z-10" />
-                </span>
+                Encrypted
               </span>
               <span className="block font-serif text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05]">
-                Your rules.
+                Collaboration
               </span>
             </h1>
 
             {/* Subheadline */}
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed max-w-xl">
-              The Google Workspace alternative that&apos;s actually private.
-              End-to-end encrypted email, chat, calendars, and wiki built on
-              the decentralized Nostr protocol.
+              A zero-knowledge workspace for teams that can&apos;t afford to be compromised.
+              Email, chat, calendars, and docs — cryptographically private by design,
+              not by policy.
             </p>
 
             {/* CTAs */}
@@ -101,16 +98,19 @@ export function Hero() {
                 className="relative group bg-primary text-primary-foreground hover:bg-primary/90 rounded-2xl px-8 h-14 text-base font-medium gap-2 shadow-2xl shadow-primary/30 overflow-hidden"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000" />
-                <span className="relative">Start for free</span>
-                <ArrowUpRight className="w-5 h-5 relative group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Google_Chrome_icon_%28February_2022%29.svg/3840px-Google_Chrome_icon_%28February_2022%29.svg.png" alt="" className="w-5 h-5 relative" />
+                <span className="relative">Get Extension</span>
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="rounded-2xl px-8 h-14 text-base font-medium border-border/50 bg-card/50 backdrop-blur-xl hover:bg-card hover:border-primary/30 transition-all"
-              >
-                Watch demo
-              </Button>
+              <a href="mailto:admin@lemonwire.work">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="rounded-2xl px-8 h-14 text-base font-medium border-border/50 bg-card/50 backdrop-blur-xl hover:bg-card hover:border-primary/30 transition-all"
+                >
+                  Email Us
+                </Button>
+              </a>
             </div>
 
             {/* Powered-by logos */}
@@ -159,25 +159,6 @@ export function Hero() {
 
           {/* Right column — product preview */}
           <div className="relative">
-            {/* Stats — compact row above screenshot */}
-            <div className="grid grid-cols-3 gap-3 mb-4">
-              {[
-                { icon: Lock, label: "E2E Encrypted", value: "100%", color: "text-green-500" },
-                { icon: Zap, label: "Faster than Gmail", value: "3x", color: "text-yellow-500" },
-                { icon: Shield, label: "Data breaches", value: "Zero", color: "text-blue-500" },
-              ].map((stat) => (
-                <div
-                  key={stat.label}
-                  className="group relative text-center p-4 rounded-2xl border border-border/50 bg-card/40 backdrop-blur-xl shadow-lg hover:shadow-xl hover:border-primary/30 transition-all duration-300 hover:-translate-y-1"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <stat.icon className={`w-5 h-5 ${stat.color} mx-auto mb-2 relative`} />
-                  <div className="font-serif text-xl font-bold mb-0.5 relative">{stat.value}</div>
-                  <div className="text-xs text-muted-foreground relative leading-tight">{stat.label}</div>
-                </div>
-              ))}
-            </div>
-
             {/* Screenshot */}
             <div className="relative group">
               <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 via-primary/20 to-primary/30 rounded-[2rem] blur-3xl opacity-40 group-hover:opacity-60 transition-opacity duration-500" />
@@ -191,15 +172,15 @@ export function Hero() {
                   </div>
                   <div className="flex-1 flex justify-center">
                     <div className="px-4 py-1.5 rounded-lg bg-background/80 backdrop-blur-sm text-xs text-muted-foreground font-mono border border-border/30">
-                      mail.lemonwire.io
+                      app.lemonwire.work
                     </div>
                   </div>
                   <div className="w-14" />
                 </div>
                 <div className="relative">
                   <Image
-                    src="/images/screenshot-mail.png"
-                    alt="Lemonwire Mail Interface"
+                    src="/images/screenshot-app-1.png"
+                    alt="Lemonwire Admin Dashboard"
                     width={1400}
                     height={800}
                     className="w-full"
