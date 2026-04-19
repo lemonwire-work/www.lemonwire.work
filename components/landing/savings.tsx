@@ -78,8 +78,8 @@ const features = [
 
 const nostrContributions = [
   {
-    title: "NIP-XX: Organizational Roster Groups",
-    description: "Our latest proposal defines workspaces with membership lists, capability tags, channels, MLS E2EE messaging, and norg keys for bounded organizational communication.",
+    title: "🍋's: Lexical Enterprise Mappings On Nostr",
+    description: "Two NIPs for enterprise-grade workspaces on Nostr: organizational roster groups with membership lists, capability tags, scoped channels, and MLS E2EE messaging for bounded team communication.",
   },
 ]
 
@@ -237,7 +237,7 @@ export function Savings() {
           <div className="inline-flex items-center gap-3 mb-8">
             <div className="h-px w-12 bg-gradient-to-r from-transparent to-primary" />
             <span className="text-xs font-mono uppercase tracking-[0.2em] text-foreground">
-              Contributing to Nostr
+              Built on Nostr
             </span>
             <div className="h-px w-12 bg-gradient-to-l from-transparent to-primary" />
           </div>
@@ -253,18 +253,21 @@ export function Savings() {
                 `}
               >
                 <div className="flex items-center gap-3 mb-4">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src="https://user-images.githubusercontent.com/99301796/219715635-58e1cafc-97d4-44ec-bccb-b70e09701579.png"
-                    alt="Nostr"
-                    className="w-8 h-8"
-                  />
                   <h4 className="font-serif text-lg font-semibold text-foreground">{contribution.title}</h4>
                 </div>
+                <a
+                    href="https://github.com/lemonwire-work/lemons"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-muted text-sm font-mono text-foreground hover:bg-primary/20 hover:text-foreground transition-colors mb-4"
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="https://github.com/favicon.ico" alt="" className="w-4 h-4" />
+                    github.com/lemonwire-work/lemons
+                    <span className="text-muted-foreground">·</span>
+                    2 NIPs
+                  </a>
                 <p className="text-muted-foreground leading-relaxed">{contribution.description}</p>
-                <div className="mt-4 pt-4 border-t border-border/30">
-                  <span className="text-xs font-mono text-foreground">Latest proposal</span>
-                </div>
               </div>
             ))}
           </div>
