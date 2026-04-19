@@ -92,7 +92,7 @@ export function CTA() {
                   <span className="relative">Find us on Nostr</span>
                 </Button>
               </a>
-                <a href="mailto:admin@ops.lemonwire.work">
+                <a href="mailto:james@atelierlogos.studio">
                   <Button
                     size="lg"
                     variant="outline"

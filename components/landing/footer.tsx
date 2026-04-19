@@ -41,7 +41,7 @@ export function Footer() {
             {/* Contact links */}
             <div className="flex items-center gap-3">
               <Link
-                href="mailto:admin@ops.lemonwire.work"
+                href="mailto:james@atelierlogos.studio"
                 className="w-9 h-9 rounded-lg border border-border bg-background flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors"
                 aria-label="Email"
               >
