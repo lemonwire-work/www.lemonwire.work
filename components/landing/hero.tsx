@@ -91,28 +91,6 @@ export function Hero() {
               not by policy.
             </p>
 
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-start gap-3 mb-10">
-              <Button
-                size="lg"
-                className="relative group bg-primary text-primary-foreground hover:bg-primary/90 rounded-2xl px-8 h-14 text-base font-medium gap-2 shadow-2xl shadow-primary/30 overflow-hidden"
-              >
-                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000" />
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Google_Chrome_icon_%28February_2022%29.svg/3840px-Google_Chrome_icon_%28February_2022%29.svg.png" alt="" className="w-5 h-5 relative" />
-                <span className="relative">Get Extension</span>
-              </Button>
-              <a href="mailto:admin@lemonwire.work">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="rounded-2xl px-8 h-14 text-base font-medium border-border/50 bg-card/50 backdrop-blur-xl hover:bg-card hover:border-primary/30 transition-all"
-                >
-                  Email Us
-                </Button>
-              </a>
-            </div>
-
             {/* Powered-by logos */}
             <div className="border-t border-border/40 pt-8">
               <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground font-medium mb-5">

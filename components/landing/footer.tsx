@@ -5,8 +5,8 @@ const footerLinks = {
   Protocol: [
     { label: "NIP-05", href: "#protocol" },
     { label: "NIP-52", href: "#protocol" },
-    { label: "Marmot Protocol", href: "#protocol" },
-    { label: "OpenBao", href: "#protocol" },
+    { label: "Marmot Protocol", href: "https://github.com/marmot-protocol/marmot" },
+    { label: "OpenBao", href: "https://openbao.org/" },
   ],
   Legal: [
     { label: "Privacy Policy", href: "/privacy" },
@@ -41,7 +41,7 @@ export function Footer() {
             {/* Contact links */}
             <div className="flex items-center gap-3">
               <Link
-                href="mailto:admin@lemonwire.work"
+                href="mailto:admin@ops.lemonwire.work"
                 className="w-9 h-9 rounded-lg border border-border bg-background flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors"
                 aria-label="Email"
               >

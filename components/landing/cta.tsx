@@ -81,16 +81,18 @@ export function CTA() {
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+                <a href="https://njump.me/npub1l70twzdewgu852fgvkplyhp068w259zqw724vtr6c4hqmzwc23gqkjmfx7" target="_blank" rel="noopener noreferrer">
                 <Button
                   size="lg"
                   className="relative group bg-primary text-primary-foreground hover:bg-primary/90 rounded-2xl px-10 h-16 text-lg font-medium gap-2 shadow-2xl shadow-primary/30 overflow-hidden"
                 >
                   <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000" />
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Google_Chrome_icon_%28February_2022%29.svg/3840px-Google_Chrome_icon_%28February_2022%29.svg.png" alt="" className="w-5 h-5 relative" />
-                  <span className="relative">Get Extension</span>
+                  <img src="https://user-images.githubusercontent.com/99301796/219715635-58e1cafc-97d4-44ec-bccb-b70e09701579.png" alt="" className="w-5 h-5 relative" />
+                  <span className="relative">Find us on Nostr</span>
                 </Button>
-                <a href="mailto:admin@lemonwire.work">
+              </a>
+                <a href="mailto:admin@ops.lemonwire.work">
                   <Button
                     size="lg"
                     variant="outline"

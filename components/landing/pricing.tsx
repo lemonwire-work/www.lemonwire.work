@@ -15,7 +15,7 @@ export function Pricing() {
         <div className="text-center max-w-4xl mx-auto mb-20">
           <div className="inline-flex items-center gap-3 mb-6">
             <div className="h-px w-12 bg-gradient-to-r from-transparent to-primary" />
-            <span className="text-xs font-mono uppercase tracking-[0.2em] text-primary">
+            <span className="text-xs font-mono uppercase tracking-[0.2em] text-foreground">
               Design Partner Program
             </span>
             <div className="h-px w-12 bg-gradient-to-l from-transparent to-primary" />
@@ -40,7 +40,7 @@ export function Pricing() {
               {/* Lemon icon */}
               <div className="text-4xl mb-8">🍋</div>
 
-              <h3 className="font-serif text-2xl font-bold mb-4">
+              <h3 className="font-serif text-2xl font-bold text-foreground mb-4">
                 Design Partner Program
               </h3>
 
@@ -81,17 +81,17 @@ export function Pricing() {
               </a>
 
               <a
-                href="mailto:admin@lemonwire.work"
+                href="mailto:james@atelierlogos.studio"
                 className="block mb-6"
               >
                 <Button variant="outline" className="w-full rounded-2xl h-13 text-base font-semibold gap-2">
-                  admin@lemonwire.work
+                  Email Us
                   <ArrowUpRight className="w-4 h-4" />
                 </Button>
               </a>
 
               <p className="text-center text-xs text-muted-foreground">
-                Only 6 slots available · $35,000 one-time onboarding
+                Only 6 slots available · $45,000 lifetime (unlimited seats)
               </p>
             </div>
           </div>

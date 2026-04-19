@@ -9,6 +9,7 @@ import { Menu, X } from "lucide-react"
 const navItems = [
   { label: "Features", href: "#features" },
   { label: "Protocol", href: "#protocol" },
+  { label: "Savings", href: "#savings" },
   { label: "Pricing", href: "#pricing" },
 ]
 
@@ -59,18 +60,17 @@ export function Header() {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
               </Link>
             ))}
-          </div>
-
-          <div className="hidden md:flex items-center gap-3">
-            <Button
-              size="sm"
-              className="relative group bg-primary text-primary-foreground hover:bg-primary/90 rounded-xl px-5 h-9 gap-2.5 shadow-lg shadow-primary/25 font-semibold text-sm overflow-hidden border border-primary/20 hover:shadow-primary/40 transition-all duration-200"
-            >
-              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Google_Chrome_icon_%28February_2022%29.svg/3840px-Google_Chrome_icon_%28February_2022%29.svg.png" alt="" className="w-4 h-4 relative shrink-0" />
-              <span className="relative tracking-wide">Get Extension</span>
-            </Button>
+<a href="https://njump.me/npub1l70twzdewgu852fgvkplyhp068w259zqw724vtr6c4hqmzwc23gqkjmfx7" target="_blank" rel="noopener noreferrer">
+              <Button
+                size="sm"
+                className="relative group bg-primary text-primary-foreground hover:bg-primary/90 rounded-xl px-5 h-9 gap-2.5 shadow-lg shadow-primary/25 font-semibold text-sm overflow-hidden border border-primary/20 hover:shadow-primary/40 transition-all duration-200"
+              >
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="https://user-images.githubusercontent.com/99301796/219715635-58e1cafc-97d4-44ec-bccb-b70e09701579.png" alt="" className="w-4 h-4 relative shrink-0" />
+                <span className="relative tracking-wide">Find us on Nostr</span>
+              </Button>
+            </a>
           </div>
 
           <button
@@ -97,11 +97,13 @@ export function Header() {
               </Link>
             ))}
             <div className="border-t border-border/50 my-2" />
-            <Button className="bg-primary text-primary-foreground rounded-xl gap-2 shadow-lg shadow-primary/25">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Google_Chrome_icon_%28February_2022%29.svg/3840px-Google_Chrome_icon_%28February_2022%29.svg.png" alt="" className="w-4 h-4" />
-              Get Extension
-            </Button>
+            <a href="https://njump.me/npub1l70twzdewgu852fgvkplyhp068w259zqw724vtr6c4hqmzwc23gqkjmfx7" target="_blank" rel="noopener noreferrer">
+              <Button className="bg-primary text-primary-foreground rounded-xl gap-2 shadow-lg shadow-primary/25">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="https://user-images.githubusercontent.com/99301796/219715635-58e1cafc-97d4-44ec-bccb-b70e09701579.png" alt="" className="w-4 h-4" />
+                Find us on Nostr
+              </Button>
+            </a>
           </div>
         </div>
       )}
